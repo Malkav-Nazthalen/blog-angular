@@ -1,18 +1,20 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
+// import {AUTH_PROVIDERS} from 'angular2-jwt';
+import {Auth} from './services/client/auth.service';
+
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpModule, JsonpModule} from '@angular/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MaterialModule} from '@angular/material';
 
-import {routing} from './app.routing';
+import {routing,appRoutingProviders} from './app.routing';
 import {AuthGuard} from './guards/auth.guards';
 
 import {AppComponent} from './app.component';
 
 import {Bandeau} from './components/bandeau/bandeau.component';
 import {UserConnexion} from './components/login/user-connexion.component';
-import {UserConnexionDialog} from './components/login/dialog/user-connexion-dialog.component';
 import {Menu} from './components/menu/menu.component';
 import {TextEditor} from './components/text-editor/text-editor.component';
 import {PanelHome} from './components/panels/home/panel-home.component';
@@ -33,7 +35,6 @@ import {UserFormService} from './services/client/user.form.service';
     AppComponent,
     Bandeau,
     UserConnexion,
-    UserConnexionDialog,
     Menu,
     TextEditor,
     PanelHome,
@@ -43,7 +44,7 @@ import {UserFormService} from './services/client/user.form.service';
     AbstractPanelItem,
     AbstractPanelEditItem
   ],
-  entryComponents:[UserConnexionDialog],
+  entryComponents:[],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -52,9 +53,10 @@ import {UserFormService} from './services/client/user.form.service';
     JsonpModule,
     ReactiveFormsModule,
     MaterialModule,
+    appRoutingProviders,
     routing
   ],
-  providers: [AuthGuard,UserService,UserFormService,ItemService,CategoryService],
+  providers: [AuthGuard,UserService,UserFormService,ItemService,CategoryService,appRoutingProviders,Auth],
   bootstrap: [AppComponent]
 })
 export class AppModule {

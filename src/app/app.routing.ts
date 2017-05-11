@@ -1,3 +1,4 @@
+import {ModuleWithProviders} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 
 import {AuthGuard} from './guards/auth.guards';
@@ -10,6 +11,7 @@ import {AbstractPanelEditItem} from './components/panels/items/item/panel-abstra
 import {PanelAdmin} from './components/panels/admin/panel-admin.component';
 
 const appRoutes : Routes = [
+      { path: '', component: PanelHome },
       { path: 'home', component: PanelHome },
       { path: 'show/:code', component: PanelItems },
       { path: 'get/:id', component: AbstractPanelItem },
@@ -19,4 +21,6 @@ const appRoutes : Routes = [
       { path: '**', redirectTo: 'home'}
     ];
 
-export const routing = RouterModule.forRoot(appRoutes);
+export const appRoutingProviders: any[] = [];
+
+export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes);

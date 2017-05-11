@@ -1,12 +1,16 @@
-<div *ngIf="!user">
-    <button md-fab (click)="openDialog()" class="btnConnexion"><md-icon>Connexion</md-icon></button>
-</div>
-<div *ngIf="user">
-    <button md-fab class="btnConnexion" [mdMenuTriggerFor]="menuUser"><md-icon>{{user.login}}</md-icon></button>
-</div>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button md-fab class="btn btn-primary btn-margin btnConnexion" (click)="auth.login()" *ngIf="!auth.authenticated()">
+        <md-icon>Connexion</md-icon>
+      </button>
+      <button md-fab class="btn btn-primary btn-margin btnConnexion" (click)="auth.logout()" *ngIf="auth.authenticated()">
+        <md-icon>{{auth.getUserName()}}</md-icon>
+      </button>
+    </div>
+  </div>
+</nav>
 
-<md-menu #menuUser="mdMenu" yPosition="below" [overlapTrigger]="false">
-    <button md-button>Mon compte</button>
-    <button md-button>Mes messages</button>
-	<button md-button (click)='deconnexion()'>Déconnexion</button>
-</md-menu>
+<main class="container">
+  <router-outlet></router-outlet>
+</main>
