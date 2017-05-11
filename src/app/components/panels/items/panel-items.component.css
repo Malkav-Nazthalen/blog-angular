@@ -1,0 +1,26 @@
+.card{
+    width: 400px;
+}
+
+.card-header-image {
+  background-image: url('../../../../assets/images/imageTombe1.jpg');
+  background-size: cover;
+}
+
+.mat-card{
+    display: inline-block;
+    margin:20px;
+    width: 200px;
+}
+
+.mat-card-image {
+    height: 180px;
+}
+
+.mat-card-avatar {
+    height: 50%;
+    width: 50%;
+    max-width: 100px;
+    border-radius: 100%;
+    flex-shrink: 0;
+}

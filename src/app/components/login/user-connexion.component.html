@@ -1,0 +1,12 @@
+<div *ngIf="!user">
+    <button md-fab (click)="openDialog()" class="btnConnexion"><md-icon>Connexion</md-icon></button>
+</div>
+<div *ngIf="user">
+    <button md-fab class="btnConnexion" [mdMenuTriggerFor]="menuUser"><md-icon>{{user.login}}</md-icon></button>
+</div>
+
+<md-menu #menuUser="mdMenu" yPosition="below" [overlapTrigger]="false">
+    <button md-button>Mon compte</button>
+    <button md-button>Mes messages</button>
+	<button md-button (click)='deconnexion()'>Déconnexion</button>
+</md-menu>

@@ -1,0 +1,18 @@
+<div>
+  <div>
+    <label>Connexion</label>
+  </div>
+  <label>{{errorMessage}}</label>
+  <form>
+    <div>
+      <span class="connexionSpan">Login :</span>
+      <input type="text" name="login" [(ngModel)]="login"/>
+    </div>
+    <div>
+      <span class="connexionSpan">Mot de passe :</span>
+      <input type="password" name="password" [(ngModel)]="password"/>
+    </div>
+    <button md-button (click)="authenticate()">Connexion</button>
+    <button md-button (click)="dialogRef.close()">Annuler</button>
+  </form>
+</div>

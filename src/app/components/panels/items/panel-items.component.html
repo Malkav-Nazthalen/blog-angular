@@ -1,0 +1,21 @@
+<md-card *ngFor="let item of items" class="card">
+  <md-card-header>
+    <div md-card-avatar>
+      <img src={{item.imageHeadUrl}} class="mat-card-avatar"> 
+    </div>
+    <md-card-title>{{item.name}}</md-card-title>
+    <md-card-subtitle>Commentaire Résumé short</md-card-subtitle>
+  </md-card-header>
+  <img md-card-image src={{item.imageHeadUrl}}>
+  <md-card-content>
+    <p>
+      {{item.commentaire}}
+    </p>
+  </md-card-content>
+  <md-card-actions>
+    <button md-button (click)="readItem(item)">Consulter</button>
+    <div *ngIf="user && user.isAdmin()">
+      <button md-button (click)="editItem(item)">Modifier</button>
+    </div>
+  </md-card-actions>
+</md-card>

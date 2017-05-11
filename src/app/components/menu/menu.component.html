@@ -1,0 +1,16 @@
+<nav md-tab-nav-bar>
+	<a md-tab-link routerLink="/home" routerLinkActive="active" class="menu-item malk-tab-link">Accueil</a>
+	<div class="malk-tab-link" *ngFor='let category of categories'>
+		<div md-tab-link class="complex-menu-item-link" (click)="navigateToCategory(category)">
+			{{category.name}}
+		</div>
+		<button *ngIf="category.more" md-button [mdMenuTriggerFor]="menuItems" class="malk-tab-link-more">+</button>
+		<md-menu #menuItems="mdMenu" yPosition="below" [overlapTrigger]="false">
+			<button md-menu-item *ngFor="let itemName of category.itemsName" (click)="navigateToItem(itemName)">{{itemName.name}}</button>
+		</md-menu>
+	</div>
+	<a md-tab-link routerLink="/contact" routerLinkActive="active" class="menu-item malk-tab-link">Nous contacter</a>
+	<div *ngIf="user && user.isAdmin()" md-tab-link routerLink="/admin" routerLinkActive="active" class="menu-item malk-tab-link">
+		<a>Admin</a>
+	</div>
+</nav>

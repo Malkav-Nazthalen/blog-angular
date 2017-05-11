@@ -1,0 +1,26 @@
+.panelConnexion{
+  width: 280px;
+}
+
+.connexionSpan{
+  width: 95px;
+  display: inline-block;
+}
+
+.btnConnexion{
+  float:right;
+}
+
+.mat-fab{
+  background-color: #fff5cf;
+  border-radius: 40%;
+  width: 110px;
+  height: 36px;
+  margin: 20px;
+}
+.mat-icon{
+  width: inherit;
+}
+.mat-fab .mat-icon, .mat-fab i{
+  padding:0;
+}
