@@ -5,7 +5,7 @@ import { Location }               from '@angular/common';
 
 import {Item} from '../../../../model/items/item';
 
-import {ItemService} from '../../../../services/server/item.service';
+import {ItemService} from '../../../../services/item.service';
 
 @Component({
   selector: 'panel-edit-item',

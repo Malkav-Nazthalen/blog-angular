@@ -1,7 +1,7 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-// import {AUTH_PROVIDERS} from 'angular2-jwt';
-import {Auth} from './services/client/auth.service';
+
+import {Auth} from './services/auth.service';
 
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpModule, JsonpModule} from '@angular/http';
@@ -9,7 +9,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MaterialModule} from '@angular/material';
 
 import {routing,appRoutingProviders} from './app.routing';
-import {AuthGuard} from './guards/auth.guards';
+import {AuthAdminGuard} from './guards/auth-admin.guards';
 
 import {AppComponent} from './app.component';
 
@@ -25,10 +25,8 @@ import {AbstractPanelItem} from './components/panels/items/item/panel-abstract-i
 import {AbstractPanelEditItem} from './components/panels/items/item/panel-abstract-edit-item.component';
 import {PanelAdmin} from './components/panels/admin/panel-admin.component';
 
-import {UserService} from './services/server/user.service';
-import {ItemService} from './services/server/item.service';
-import {CategoryService} from './services/server/category.service';
-import {UserFormService} from './services/client/user.form.service';
+import {ItemService} from './services/item.service';
+import {CategoryService} from './services/category.service';
 
 @NgModule({
   declarations: [
@@ -56,7 +54,7 @@ import {UserFormService} from './services/client/user.form.service';
     appRoutingProviders,
     routing
   ],
-  providers: [AuthGuard,UserService,UserFormService,ItemService,CategoryService,appRoutingProviders,Auth],
+  providers: [AuthAdminGuard,ItemService,CategoryService,appRoutingProviders,Auth],
   bootstrap: [AppComponent]
 })
 export class AppModule {

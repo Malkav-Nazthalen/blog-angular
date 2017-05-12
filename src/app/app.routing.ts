@@ -1,7 +1,7 @@
 import {ModuleWithProviders} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 
-import {AuthGuard} from './guards/auth.guards';
+import {AuthAdminGuard} from './guards/auth-admin.guards';
 
 import {PanelHome} from './components/panels/home/panel-home.component';
 import {PanelContact} from './components/panels/contact/panel-contact.component';
@@ -17,7 +17,7 @@ const appRoutes : Routes = [
       { path: 'get/:id', component: AbstractPanelItem },
       { path: 'edit/:id', component: AbstractPanelEditItem },
       { path: 'contact', component: PanelContact },
-      { path: 'admin', component: PanelAdmin, canActivate:[AuthGuard] },
+      { path: 'admin', component: PanelAdmin, canActivate:[AuthAdminGuard] },
       { path: '**', redirectTo: 'home'}
     ];
 

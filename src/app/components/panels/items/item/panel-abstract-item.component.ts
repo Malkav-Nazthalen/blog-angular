@@ -5,7 +5,7 @@ import { Location } from '@angular/common';
 import 'rxjs/add/operator/switchMap';
 
 import {Item} from '../../../../model/items/item';
-import {ItemService} from '../../../../services/server/item.service';
+import {ItemService} from '../../../../services/item.service';
 
 @Component({
     selector: 'item',

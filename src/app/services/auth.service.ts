@@ -1,46 +1,60 @@
 import { Injectable }      from '@angular/core';
 import { tokenNotExpired } from 'angular2-jwt';
 import { myConfig }        from './auth.config';
+import { EnumUserRole } from '../model/enum-user-role';
+import { User } from '../model/user'
 
 // Avoid name not found warnings
 declare var Auth0Lock: any;
 
 @Injectable()
 export class Auth {
-  // Configure Auth0
+
   lock = new Auth0Lock(myConfig.clientID, myConfig.domain, {});
 
   constructor() {
-    // Add callback for lock `authenticated` event
     this.lock.on('authenticated', (authResult) => {
       this.lock.getUserInfo(authResult.accessToken, function(error, profile) {
         if (error) {
-          // Handle error
+          //TODO : Handle error
           return;
         }
-        localStorage.setItem('profile', JSON.stringify(profile));
+        let user : User = new User(JSON.parse(localStorage.getItem('profile')).name,
+                                   EnumUserRole[EnumUserRole[JSON.parse(localStorage.getItem('profile')).app_metadata.profile]],
+                                   authResult.idToken);
+        localStorage.setItem('user', JSON.stringify(user));
+        localStorage.setItem('id_token', JSON.stringify(user.tokenId));
       });
-      localStorage.setItem('id_token', authResult.idToken);
     });
+  }
+
+  public isAdmin():boolean {
+    let user:User = JSON.parse(localStorage.getItem('user'));
+    return user.isAdmin();
   }
 
   public getUserName(): string {
      return JSON.parse(localStorage.getItem('profile')).name+" "+JSON.parse(localStorage.getItem('profile')).app_metadata.profile;
   }
 
+  /**
+   * Show the popup for authentication with Auth0.
+   */
   public login() {
-    // Call the show method to display the widget.
     this.lock.show();
-  };
+  }
 
+  /**
+   *  Check if there's an unexpired JWT
+   */
   public authenticated() {
-    // Check if there's an unexpired JWT
-    // It searches for an item in localStorage with key == 'id_token'
     return tokenNotExpired('id_token');
-  };
+  }
 
+  /**
+   * Just remove authentication's token from localStorage
+   */
   public logout() {
-    // Remove token from localStorage
     localStorage.removeItem('id_token');
-  };
+  }
 }

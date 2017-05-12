@@ -8,9 +8,9 @@ import { Category } from '../../model/categories/category';
 import { EnumUserRole } from '../../model/enum-user-role';
 import { ItemName } from '../../model/items/item-name';
 
-import { ItemService } from '../../services/server/item.service';
-import { CategoryService } from '../../services/server/category.service';
-import { UserFormService } from '../../services/client/user.form.service';
+import { ItemService } from '../../services/item.service';
+import { CategoryService } from '../../services/category.service';
+import { Auth } from '../../services/auth.service';
 
 @Component( {
     selector: 'menu',
@@ -25,18 +25,10 @@ export class Menu implements OnInit  {
     constructor(private itemService : ItemService,
                 private categoryService : CategoryService,
                 private router : Router,
-                private userFormService : UserFormService) {
-                    this.userFormService.userConnexionEvent$.subscribe(user => this.user = user);
-                    this.userFormService.userDisconnexionEvent$.subscribe(none => this.user = null);
-                }
+                private auth : Auth) {}
 
     ngOnInit():void
     {
-        let currentUser = JSON.parse(localStorage.getItem('currentUser'));
-        if(currentUser != null)
-        {
-            this.user = new User(currentUser.login, currentUser.password,EnumUserRole[EnumUserRole[currentUser.role]]);
-        }
         this.categories = this.categoryService.getCategories();
         for(let category of this.categories)
         {

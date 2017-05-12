@@ -1,19 +1,18 @@
 import {EnumUserRole} from './enum-user-role';
 
 export class User {
-    login: string;
-    password: string;
-    role:string;
+    name: string;
+    role: string;
+    tokenId: string;
 
-    constructor(login:string, password:string, role:string)
+    constructor(name:string, role:string, tokenId:string)
     {
-        this.login = login;
-        this.password = password;
+        this.name = name;
         this.role = role;
+        this.tokenId = tokenId;
     }
 
-    isAdmin():boolean{
-        return true;
-        // return this.role == EnumUserRole.ADMIN;
+    public isAdmin() : boolean {
+        return EnumUserRole[this.role] == EnumUserRole.ADMIN;
     }
 }

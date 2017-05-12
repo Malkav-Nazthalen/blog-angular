@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Headers, Http } from '@angular/http';
-import { Item } from '../../model/items/item';
-import { ItemName } from '../../model/items/item-name';
-import { ItemLite } from '../../model/items/item-lite';
-import { Category } from '../../model/categories/category';
-import { User } from '../../model/user';
-import { EnumUserRole } from '../../model/enum-user-role';
+import { Item } from '../model/items/item';
+import { ItemName } from '../model/items/item-name';
+import { ItemLite } from '../model/items/item-lite';
+import { Category } from '../model/categories/category';
+import { User } from '../model/user';
+import { EnumUserRole } from '../model/enum-user-role';
 
 @Injectable()
 export class ItemService {

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Auth } from '../../services/client/auth.service';
+import { Auth } from '../../services/auth.service';
 
 @Component( {
     selector: 'user-connexion',

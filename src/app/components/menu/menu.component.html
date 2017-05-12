@@ -10,7 +10,7 @@
 		</md-menu>
 	</div>
 	<a md-tab-link routerLink="/contact" routerLinkActive="active" class="menu-item malk-tab-link">Nous contacter</a>
-	<div *ngIf="user && user.isAdmin()" md-tab-link routerLink="/admin" routerLinkActive="active" class="menu-item malk-tab-link">
+	<div *ngIf="auth.authenticated() && auth.isAdmin()" md-tab-link routerLink="/admin" routerLinkActive="active" class="menu-item malk-tab-link">
 		<a>Admin</a>
 	</div>
 </nav>

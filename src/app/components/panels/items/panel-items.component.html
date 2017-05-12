@@ -14,7 +14,7 @@
   </md-card-content>
   <md-card-actions>
     <button md-button (click)="readItem(item)">Consulter</button>
-    <div *ngIf="user && user.isAdmin()">
+    <div *ngIf="auth.authenticated() && auth.isAdmin()">
       <button md-button (click)="editItem(item)">Modifier</button>
     </div>
   </md-card-actions>
