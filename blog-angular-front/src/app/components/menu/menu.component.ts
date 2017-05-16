@@ -34,7 +34,7 @@ export class MenuComponent implements OnInit {
   private initCategories(categories): void {
     this.categories = categories;
     for (const category of this.categories) {
-      category.itemsName = this.itemService.getItemsNameForCategorie(category);
+      this.itemService.getItemsNameForCategorie(category).then(itemsName => category.itemsName = itemsName);
     }
   }
 

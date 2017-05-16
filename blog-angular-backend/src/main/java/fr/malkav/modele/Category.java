@@ -1,4 +1,4 @@
-package fr.malkav;
+package fr.malkav.modele;
 
 public class Category {
 

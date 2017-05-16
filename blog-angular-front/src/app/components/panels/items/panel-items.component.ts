@@ -34,7 +34,7 @@ export class PanelItemsComponent implements OnInit {
   ngOnInit(): void {
     this.route.params
       .switchMap((params: Params) => this.categoryService.getCategory(params['code']))
-      .subscribe(category => this.items = this.itemService.getItemsLite(category));
+      .subscribe(category => this.itemService.getItemsLite(category).then(items => this.items = items));
   }
 
   editItem(item: ItemLite): void {

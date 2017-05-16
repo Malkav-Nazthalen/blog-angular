@@ -4,6 +4,6 @@ interface AuthConfiguration {
 }
 
 export const myConfig: AuthConfiguration = {
-  clientID: 'monClientID',
-  domain: 'monDomaine'
+  clientID: 'p6vJ1X9l3zHhIyQMiqs14FU2ValTCcA6',
+  domain: 'malkav-nazthalen.eu.auth0.com'
 };
