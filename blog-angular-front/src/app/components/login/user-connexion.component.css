@@ -1,0 +1,42 @@
+.panelConnexion {
+	width: 280px;
+}
+
+.connexionSpan {
+	width: 95px;
+	display: inline-block;
+}
+
+.btn-connexion {
+	float: right;
+}
+
+.mat-fab {
+	background-color: white;
+	border-radius: 100%;
+	width: 55px;
+	height: 55px;
+	margin: 10px;
+}
+
+.mat-icon {
+	width: inherit;
+}
+
+.mat-fab .mat-icon, .mat-fab i {
+	padding: 0;
+}
+
+.login-button {
+	background-image: url('../../../assets/images/login.jpg');
+	background-repeat: no-repeat;
+	background-position: center;
+    background-size: 65%;
+}
+
+.logout-button {
+	font-family: serif;
+	color: white;
+	background-color: #517ab5;
+    font-size: 22px;
+}

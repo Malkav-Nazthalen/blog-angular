@@ -1,0 +1,4 @@
+<div *ngIf="item">
+    <app-editor [elementId]="'my-editor'" [content]="item.content" (onEditorKeyup)="keyupHandler($event)"></app-editor>
+    <button md-button (click)="save()">Sauvegarder</button>
+</div>

@@ -1,0 +1,6 @@
+<div>
+	<button md-fab class="btn-connexion login-button" (click)="auth.login()" *ngIf="!auth.authenticated()"></button>
+	<button md-fab class="btn-connexion logout-button" (click)="auth.logout()" *ngIf="auth.authenticated()">
+		<md-icon>{{getUserLetter()}}</md-icon>
+	</button>
+</div>
