@@ -12,7 +12,7 @@
       {{item.commentaire}}
     </p>
   </md-card-content>
-  <md-card-actions>
+  <md-card-actions class="card-actions">
     <button md-button (click)="readItem(item)">Consulter</button>
     <div *ngIf="auth.authenticated() && auth.isAdmin()">
       <button md-button (click)="editItem(item)">Modifier</button>

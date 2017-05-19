@@ -5,6 +5,9 @@
 .malk-tab-link {
 	float: left;
 }
+.malk-tab-link:HOVER{
+	background-color: #f7f7f7;
+}
 
 .malk-tab-link-more {
 	min-width: 20px;

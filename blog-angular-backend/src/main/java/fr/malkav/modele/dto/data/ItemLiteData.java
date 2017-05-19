@@ -1,27 +1,27 @@
-package fr.malkav.modele;
+package fr.malkav.modele.dto.data;
 
-public class ItemLite extends ItemName {
+public class ItemLiteData extends ItemNameData {
 
-	private User creator;
+	private int creatorId;
 	private String imageHeadUrl;
 	private String commentaire;
 
-	public ItemLite() {
+	public ItemLiteData() {
 	}
-	
-	public ItemLite(int id, String name, Category category, User creator, String imageHeadUrl, String commentaire) {
-		super(id, name, category);
-		this.creator = creator;
+
+	public ItemLiteData(int id, String name, int categoryId, int creatorId, String imageHeadUrl, String commentaire) {
+		super(id, name, categoryId);
+		this.creatorId = creatorId;
 		this.imageHeadUrl = imageHeadUrl;
 		this.commentaire = commentaire;
 	}
 
-	public User getCreator() {
-		return creator;
+	public int getCreatorId() {
+		return creatorId;
 	}
 
-	public void setCreator(User creator) {
-		this.creator = creator;
+	public void setCreatorId(int creatorId) {
+		this.creatorId = creatorId;
 	}
 
 	public String getImageHeadUrl() {

@@ -1,15 +1,15 @@
-package fr.malkav.modele;
+package fr.malkav.modele.dto.webservice;
 
-public class ItemName {
+public class ItemNameDto {
 
 	private int id;
 	private String name;
-	private Category category;
+	private CategoryDto category;
 
-	public ItemName() {
+	public ItemNameDto() {
 	}
 	
-	public ItemName(int id, String name, Category category) {
+	public ItemNameDto(int id, String name, CategoryDto category) {
 		this.id = id;
 		this.name = name;
 		this.category = category;
@@ -31,11 +31,11 @@ public class ItemName {
 		this.name = name;
 	}
 
-	public Category getCategory() {
+	public CategoryDto getCategory() {
 		return category;
 	}
 
-	public void setCategory(Category category) {
+	public void setCategory(CategoryDto category) {
 		this.category = category;
 	}
 

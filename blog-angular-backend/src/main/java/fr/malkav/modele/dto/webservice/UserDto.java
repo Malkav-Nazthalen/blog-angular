@@ -1,10 +1,13 @@
-package fr.malkav.modele;
+package fr.malkav.modele.dto.webservice;
 
-public class User {
+public class UserDto {
 
 	private String name;
+	
+	public UserDto() {
+	}
 
-	public User(String name) {
+	public UserDto(String name) {
 		this.name = name;
 	}
 

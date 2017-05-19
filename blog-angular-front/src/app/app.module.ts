@@ -24,6 +24,7 @@ import { PanelItemsComponent } from './components/panels/items/panel-items.compo
 import { AbstractPanelItemComponent } from './components/panels/items/item/panel-abstract-item.component';
 import { AbstractPanelEditItemComponent } from './components/panels/items/item/panel-abstract-edit-item.component';
 import { PanelAdminComponent } from './components/panels/admin/panel-admin.component';
+import { AdminCategoriesComponent } from './components/panels/admin/categories/admin-categories.component';
 
 import { ItemService } from './services/item.service';
 import { CategoryService } from './services/category.service';
@@ -38,6 +39,7 @@ import { CategoryService } from './services/category.service';
     PanelHomeComponent,
     PanelContactComponent,
     PanelAdminComponent,
+    AdminCategoriesComponent,
     PanelItemsComponent,
     AbstractPanelItemComponent,
     AbstractPanelEditItemComponent

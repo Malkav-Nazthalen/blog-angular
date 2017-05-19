@@ -1,0 +1,11 @@
+.title{
+    font-size: x-large;
+    color: #4c61a2;
+    background-color: #efefef;
+    margin-top: 1px;
+    padding: 15px;
+}
+
+.admin-content{
+	border: 1px solid black;
+}

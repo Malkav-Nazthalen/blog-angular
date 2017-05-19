@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Headers, Http } from '@angular/http';
+import { Http } from '@angular/http';
 import { Item } from '../model/items/item';
 import { ItemName } from '../model/items/item-name';
 import { ItemLite } from '../model/items/item-lite';

@@ -1,13 +1,13 @@
-package fr.malkav.modele;
+package fr.malkav.modele.dto.webservice;
 
-public class Item extends ItemLite {
+public class ItemDto extends ItemLiteDto {
 
 	private String content;
 
-	public Item() {
+	public ItemDto() {
 	}
 	
-	public Item(int id, String name, Category category, User creator, String imageHeadUrl, String commentaire,
+	public ItemDto(int id, String name, CategoryDto category, UserDto creator, String imageHeadUrl, String commentaire,
 			String content) {
 		super(id, name, category, creator, imageHeadUrl, commentaire);
 		this.content = content;

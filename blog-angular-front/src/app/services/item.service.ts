@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Headers, Http } from '@angular/http';
+import { Http } from '@angular/http';
 import { Item } from '../model/items/item';
-import { Test } from '../model/items/test';
 import { ItemName } from '../model/items/item-name';
 import { ItemLite } from '../model/items/item-lite';
 import { Category } from '../model/categories/category';
@@ -28,8 +27,7 @@ export class ItemService {
     return this.http.get(`${this.resourceUrl}/${id}`).toPromise().then(res => res.json() as Item);
   }
 
-  saveItem(item: Item): void {
-    console.info("saveItem");
-    this.http.put(this.resourceUrl, JSON.stringify(new Test(item.name)),new Headers({'Content-Type': 'application/json'}));
+  saveItem(item: Item): Promise<Item> {
+    return this.http.put(this.resourceUrl, item).toPromise().then(res => res.json());
   }
 }
